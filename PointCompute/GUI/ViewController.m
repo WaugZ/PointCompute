@@ -18,20 +18,27 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
   
-  // Create the label object and set its frame
-  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+//  // Create the label object and set its frame
+//  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+//
+//  // Set the text property of the label
+//  label.text = @"Hello again!";
+//
+//  // Add the label object to the view
+//  [self.view addSubview:label];
   
-  // Set the text property of the label
-  label.text = @"Hello again!";
+  self.helloLabel.text = @"default text";
   
-  // Add the label object to the view
-  [self.view addSubview:label];
+  [self.clickyButton setTitle:@"Clicky" forState:UIControlStateNormal];
   
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  //    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-       return YES;
-  }
+- (IBAction)handleButtonClick:(id)sender {
+  self.helloLabel.text = self.customTextField.text;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.customTextField resignFirstResponder];
+}
 
 @end

@@ -10,7 +10,11 @@
 
 @interface ViewController : UIViewController
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+@property (strong, nonatomic) IBOutlet UILabel *helloLabel;
+
+@property (strong, nonatomic) IBOutlet UITextField *customTextField;
+
+@property (strong, nonatomic) IBOutlet UIButton *clickyButton;
 
 
 @end
